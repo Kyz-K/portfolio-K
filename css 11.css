@@ -1,0 +1,284 @@
+/* ===== BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav__logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__item {
+    margin-left: 2rem;
+}
+
+.nav__link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: #0078ff;
+}
+
+.active-link {
+    color: #0078ff;
+}
+
+.nav__toggle {
+    font-size: 1.5rem;
+    color: #b84040;
+    cursor: pointer;
+    display: none;
+}
+
+/* ===== HOME ===== */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+.home__data {
+    flex: 1;
+}
+
+.home__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.home__title-color {
+    color: #d41626;
+}
+
+.home__social {
+    display: flex;
+    margin: 1.5rem 0;
+}
+
+.home__social-icon {
+    font-size: 1.5rem;
+    color: #333;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.home__social-icon:hover {
+    color: #243a53;
+}
+
+.button {
+    display: inline-block;
+    background-color: #0d488b;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #3c3d3d;
+}
+
+.home__img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__blob {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.footer__icon {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer__icon:hover {
+    color: #0078ff;
+}
+
+/* ===== FORM ===== */
+.form__group {
+    margin-bottom: 1.5rem;
+}
+
+.form__group label {
+    display: block;
+    color: var(--first-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 2px solid #e1e1e1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact__input:focus {
+    border-color: var(--first-color);
+    box-shadow: 0 0 0 4px rgba(13, 72, 139, 0.1);
+}
+
+.contact__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: 5rem;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s;
+        padding: 2rem;
+    }
+
+    .nav__menu.active {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+    }
+
+    .nav__item {
+        margin: 1rem 0;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 7rem;
+        height: auto;
+    }
+
+    .home__data {
+        order: 2;
+        margin-top: 2rem;
+    }
+
+    .home__img {
+        order: 1;
+    }
+
+    .home__social {
+        justify-content: center;
+    }
+
+    .home__title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home__title {
+        font-size: 1.8rem;
+    }
+
+    .button {
+        padding: 0.6rem 1.5rem;
+    }
+
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .home {
+        padding: 7rem 1rem 0;
+    }
+}
